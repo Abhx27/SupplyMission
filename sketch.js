@@ -1,5 +1,6 @@
 var helicopterIMG, helicopterSprite, packageSprite,packageIMG;
 var packageBody,ground
+var line,line2,line3
 const Engine = Matter.Engine;
 const World = Matter.World;
 const Bodies = Matter.Bodies;
@@ -27,6 +28,22 @@ function setup() {
 	groundSprite=createSprite(width/2, height-35, width,10);
 	groundSprite.shapeColor=color(255)
 
+	lineSprite=createSprite(400, height-35, 200,10);
+	lineSprite.shapeColor=color(255,0,0)
+
+	line2Sprite=createSprite(300, height-80, 10,100);
+	line2Sprite.shapeColor=color(255,0,0)
+
+	line3Sprite=createSprite(500, height-80, 10,100);
+	line3Sprite.shapeColor=color(255,0,0)
+
+	
+
+
+
+
+
+
 
 	engine = Engine.create();
 	world = engine.world;
@@ -37,7 +54,10 @@ function setup() {
 
 	//Create a Ground
 	ground = Bodies.rectangle(width/2, 650, width, 10 , {isStatic:true} );
- 	World.add(world, ground);
+	 World.add(world, ground);
+
+	 line = Bodies.rectangle(width/2, 650, width, 10 , {isStatic:true} );
+	 World.add(world, ground);
 
 
 	Engine.run(engine);
@@ -60,6 +80,3 @@ function keyPressed() {
     
   }
 }
-
-
-
